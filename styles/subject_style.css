@@ -1,0 +1,47 @@
+body {
+    background-color: #eef0f6;
+    font-size: 19px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #759cd8;
+}
+
+#title_1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    color: #094d74;
+}
+
+p {
+    max-width: 800px;
+}
+
+ul {
+    list-style-type: square;
+}
+/* викортстання сусідніх селекторів */
+b + i {
+    color: blue;
+}
+/* використання дочірніх селекторів */
+li > i {
+    color: coral;
+    font-size: 20px;
+}
+/* використання селектора атрибута  */
+li[id] {
+    color: red;
+}
+/* використання універсального селоктора */
+* {
+    font-family: Arial, Verdana, sans-serif;
+}
