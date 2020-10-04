@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9ba67f-44fa-42a2-88ec-0027d10925bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/indexCode.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index_style_Code.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leftButtons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postanovka.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/styles/leftShow_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subjectCode.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/subject_style_Code.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WEB.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/index_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexCode.html" beforeDir="false" afterPath="$PROJECT_DIR$/indexCode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leftButtons.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba2/leftButtons2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,13 +68,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB" />
       <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba2" />
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\images" />
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -93,7 +86,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601388788211</updated>
-      <workItem from="1601388789392" duration="24932000" />
+      <workItem from="1601388789392" duration="25111000" />
+      <workItem from="1601450040881" duration="1366000" />
+      <workItem from="1601474502125" duration="174000" />
+      <workItem from="1601736756050" duration="1156000" />
+      <workItem from="1601830180508" duration="4787000" />
     </task>
     <servers />
   </component>
@@ -110,6 +107,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="203" key="#Inspections" timestamp="1601389617408">
@@ -124,10 +122,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="304" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601403470509" />
-    <state x="436" y="263" key="SettingsEditor" timestamp="1601403616476">
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1601474675757">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="436" y="263" key="SettingsEditor/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601403616476" />
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601474675757" />
+    <state x="436" y="263" key="SettingsEditor" timestamp="1601455185663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="436" y="263" key="SettingsEditor/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601455185663" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601414886085">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
