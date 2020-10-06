@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Таблична розмітка</title>
+	<style> 
+		.table{
+			width: 100%;
+			height: 1000px;
+		}
+		#header_block {
+			height: 50px;
+		}
+		.header_top, .header_bottom {
+			height: 50px;
+		}
+		.middle_row {
+			height: 600px;
+		}
+		
+	</style>
+</head>
+<body>
+	<table border="1" align="center" class="table" cellspacing="0">
+		<tr class="header_top">
+			<td colspan="2" bgcolor="f7a500"></td>
+			<td rowspan="3" bgcolor="f7a500"></td>
+			
+		</tr>
+		<tr id="header_block">
+			<td colspan="2" bgcolor="white"></td>
+			
+		</tr>
+		<tr class="header_bottom">
+			<td colspan="3" bgcolor="f7a500"></td>
+			
+		</tr>
+
+		<tr class="middle_row">
+			<td bgcolor="#0f23d9">block1</td>
+			<td>block2</td>
+			<td bgcolor="#0f23d9">block3</td>
+		</tr>
+		<tr>
+			<td colspan="3" bgcolor="f7a500">block4</td>
+		</tr>
+
+	</table>
+
+</body>
+</html>
