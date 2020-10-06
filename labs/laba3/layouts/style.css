@@ -1,0 +1,75 @@
+.header{
+	background: #ffab03;
+	height: 130px;
+
+}
+
+.row:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.row { display: inline-block; }
+/* start commented backslash hack \*/
+* html .row { height: 1%; }
+.row { display: block; }
+/* close commented backslash hack */
+
+.content{
+	background: #063fcf;
+	height: 1020px;
+	width: 30%;
+	float: left;
+
+}
+.sidebar1{
+	background: #e0190b;
+	height: 100px;
+	width: 68%;
+	float: right;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.sidebar2{
+	background: #fff;
+	height: 880px;
+	width: 34%;
+	float: left;
+	margin: 10px 10px 10px 20px;
+	border: 3px solid black;
+}
+
+.sidebar3{
+	background: #10e34c;
+	height: 100px;
+	width: 100%;
+	margin-top: 780px;	
+}
+
+
+.footer{
+	background: #ffab03;
+	height: 130px
+}
+
+.sidebar4{
+	background: #063fcf;
+	height: 885px;
+	width: 32%;
+	float: left;
+	margin: 10px 10px 10px 14px;
+
+}
+.block{
+	background: #fff;
+	height: 40px;
+	width: 40%;
+	margin-top: 40px;
+	float: left;
+	margin-left: 10px;
+}
