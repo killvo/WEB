@@ -1,3 +1,11 @@
+
+function clean() {
+    $(".big_load").empty();
+    $(".img_view").attr("src", "");
+    $(".img_html").attr("src", "");
+    $(".img_css").attr("src", "");
+}
+
 function showLeft(fileName) {
     $.get(fileName, function (data) {
         $(".left_load").html(data);
@@ -60,7 +68,6 @@ $(document).ready(function() {
 })
 
 
-
 function loadView(imgPath) {
     $(".img_view").attr("src", imgPath);
 }
@@ -71,10 +78,7 @@ function loadCss(imgPath) {
     $(".img_css").attr("src", imgPath);
 }
 function loadViewMain(img_view, img_html, img_css) {
-    $(".big_load").empty();
-    $(".img_view").attr("src", "");
-    $(".img_html").attr("src", "");
-    $(".img_css").attr("src", "");
+    clean();
     addBorders();
     loadView(img_view);
     loadHtml(img_html);
