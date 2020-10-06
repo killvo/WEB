@@ -6,64 +6,219 @@
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
 </head>
 <body>
+
 <div class="header">
-    <div class="header-logo">
-        <a href="">
-            <img src="images/logo1.png" alt="logo">
-        </a>
+    <div class="wrapper">
+        <div class="header-logo">
+            <a href="">
+                <img src="images/logo1.png" alt="logo">
+            </a>
+        </div>
+        <div class="header-text">Домашня бухгалтерія</div>
+        <div class="menu">
+            <ul>
+                <li><a href="login.html#auth_paragraph">Login</a></li>
+                |
+                <li><a href="">Logout</a></li>
+            </ul>
+        </div>
+
     </div>
-    <div class="header-text">Домашня бухгалтерія</div>
-    <div class="menu">
+</div>
+
+<div class="wrapper">
+    <div class="left_block">
         <ul>
-            <li><a href="">Login</a></li>
-            |
-            <li><a href="">Logout</a></li>
+            <li><a href="subject.html">Інформація</a></li>
+            <li><a href="">Pro-підписка</a></li>
+            <li><a href="">Керування категоріями</a></li>
+            <li><a href="">Бюджет</a></li>
+            <li><a href="">Статистика</a></li>
+            <li><a href="">Накопичення</a></li>
         </ul>
     </div>
+
+    <div class="table_block">
+        <table>
+            <tr>
+                <th colspan="2">Категорія</th>
+                <th>Дата</th>
+                <th>Сума</th>
+                <th>Коментар</th>
+            </tr>
+            <tr>
+                <td width="5"><input type="checkBox">№1</td>
+                <td>категорія1</td>
+                <td>дата1</td>
+                <td>сума1</td>
+                <td>коментар1</td>
+            </tr>
+            <tr>
+                <td width="5"><input type="checkBox">№2</td>
+                <td>категорія2</td>
+                <td>дата2</td>
+                <td>сума2</td>
+                <td>коментар2</td>
+            </tr>
+            <tr>
+                <td width="5"><input type="checkBox">№3</td>
+                <td>категорія3</td>
+                <td>дата3</td>
+                <td>сума3</td>
+                <td>коментар3</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="sort_block">
+        <div class="sort_block_form">
+            <form action="" method="post">
+                <div class="formHtext">Переглянути за:</div>
+                <div class="form__pair">
+                    <div class="formText">Категорією</div>
+                    <div class="form__select">
+                        <select name="">
+                            <option value="select" selected="selected"></option>
+                            <option value="cost">Тип:витрати</option>
+                            <option value="income">Тип:доходи</option>
+                            <option value="all">Всі категорії</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__pair">
+                    <div class="formText">Місяцем</div>
+                    <div class="form__select">
+                        <select name="monthShow">
+                            <option value="select" selected="selected"></option>
+                            <option value="1">Січень</option>
+                            <option value="2">Лютий</option>
+                            <option value="3">Березень</option>
+                            <option value="4">Квітень</option>
+                            <option value="5">Травень</option>
+                            <option value="6">Червень</option>
+                            <option value="7">Липень</option>
+                            <option value="8">Серпень</option>
+                            <option value="9">Вересень</option>
+                            <option value="10">Жовтень</option>
+                            <option value="11">Листопад</option>
+                            <option value="12">Грудень</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form__submit">
+                    <input type="submit" value="Показати">
+                </div>
+            </form>
+        </div>
+
+        <div class="controll__payments">
+            <div class="add__payment">
+                <form action="" method="post">
+                    <div class="formHtext">Додати платіж</div>
+                    <div class="formCat__pair">
+                        <div class="formText">Категорія</div>
+                        <div class="form__select">
+                            <select name="categorySelect">
+                                <option value="select" selected="selected"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Дата</div>
+                        <div class="form__input">
+                            <input type="date" name="date">
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Повторювати</div>
+                        <div class="form__input-checkBox">
+                            <input type="checkBox" class="table__checkBox" name="" value="on">
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Сума</div>
+                        <div class="form__input">
+                            <input type="text" autocomplete="off" name="">
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Коментар</div>
+                        <div class="form__input">
+                            <input type="text" autocomplete="off" name="">
+                        </div>
+                    </div>
+                    <div class="form__submit">
+                        <input type="submit" value="Додати">
+                    </div>
+                </form>
+            </div>
+            <div class="edit__payment">
+                <form action="" method="get" id="editPayments">
+                    <div class="formHtext">Редагувати платіж</div>
+                    <div class="formCat__pair">
+                        <div class="formText">Номер</div>
+                        <div class="form__input">
+                            <input type="text" autocomplete="off" name="">
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Категорія</div>
+                        <div class="form__select">
+                            <select name="categorySelect">
+                                <option value="select" selected="selected"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Дата</div>
+                        <div class="form__input">
+                            <input type="date" name="date">
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Повторювати</div>
+                        <div class="form__input-checkBox">
+                            <input type="checkBox" class="table__checkBox" name="">
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Сума</div>
+                        <div class="form__input">
+                            <input type="text" autocomplete="off" name="">
+                        </div>
+                    </div>
+                    <div class="formCat__pair">
+                        <div class="formText">Коментар</div>
+                        <div class="form__input">
+                            <input type="text" autocomplete="off" name="">
+                        </div>
+                    </div>
+                    <div class="form__submit">
+                        <input type="submit" value="Змінити">
+                    </div>
+                </form>
+            </div>
+            <div class="delete__payment">
+                <form action="" method="post" id="removePayments">
+                    <div class="formHtext">Видалити платіж</div>
+                    <div class="form__submit_delete">
+                        <input type="submit" value="Видалити">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
 </div>
 
-<div class="left_block">
-    <ul>
-        <li><a href="subject.html">Інформація</a></li>
-        <li><a href="">Pro-підписка</a></li>
-        <li><a href="">Керування категоріями</a></li>
-        <li><a href="">Бюджет</a></li>
-        <li><a href="">Статистика</a></li>
-        <li><a href="">Накопичення</a></li>
-    </ul>
-</div>
+    <div class="footer">
+        <div class="wrapper">
+            <p>Copyright: Volodymyr Chumak & Evheniy Volyk
+                2020
+            </p>
+        </div>
+    </div>
 
-<div class="table_block">
-    <table>
-        <tr>
-            <th colspan="2">Категорія</th>
-            <th>Дата</th>
-            <th>Сума</th>
-            <th>Коментар</th>
-        </tr>
-        <tr>
-            <td width="5"><input type="checkBox">№1</td>
-            <td>категорія1</td>
-            <td>дата1</td>
-            <td>сума1</td>
-            <td>коментар1</td>
-        </tr>
-        <tr>
-            <td width="5"><input type="checkBox">№2</td>
-            <td>категорія2</td>
-            <td>дата2</td>
-            <td>сума2</td>
-            <td>коментар2</td>
-        </tr>
-        <tr>
-            <td width="5"><input type="checkBox">№3</td>
-            <td>категорія3</td>
-            <td>дата3</td>
-            <td>сума3</td>
-            <td>коментар3</td>
-        </tr>
-    </table>
-</div>
 
 </body>
 </html>

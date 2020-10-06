@@ -20,11 +20,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9ba67f-44fa-42a2-88ec-0027d10925bb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/float_css.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/float_html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/float_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/id_css.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/id_html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/id_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/indents_css.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/indents_html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/indents_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/lists_css.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/lists_html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/lists_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/postanovka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_another_css.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_another_html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_another_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_group_css.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_group_html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_group_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_tag-class_css.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_tag-class_html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/sel_tag-class_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/viewCode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/login_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/indexCode.html" beforeDir="false" afterPath="$PROJECT_DIR$/indexCode.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leftButtons.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba2/leftButtons2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/laba2/leftButtons2.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba2/leftButtons2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/laba2/postanovka2.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/index_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +61,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -63,18 +90,24 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/labs/laba2/images2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba2\images2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba2" />
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs" />
       <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\images" />
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba2" />
       <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB" />
     </key>
   </component>
@@ -90,7 +123,9 @@
       <workItem from="1601450040881" duration="1366000" />
       <workItem from="1601474502125" duration="174000" />
       <workItem from="1601736756050" duration="1156000" />
-      <workItem from="1601830180508" duration="4787000" />
+      <workItem from="1601830180508" duration="5179000" />
+      <workItem from="1601923110429" duration="6372000" />
+      <workItem from="1601974069988" duration="20629000" />
     </task>
     <servers />
   </component>
@@ -109,15 +144,18 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="586" y="203" key="#Inspections" timestamp="1601389617408">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="586" y="203" key="#Inspections/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601389617408" />
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601403648239">
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601978402659">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601403648239" />
+    <state x="414" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601978402659" />
     <state x="690" y="304" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1601403470509">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -130,6 +168,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="436" y="263" key="SettingsEditor/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601455185663" />
+    <state x="616" y="243" key="run.anything.popup" timestamp="1601927803773">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="616" y="243" key="run.anything.popup/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601927803773" />
     <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601414886085">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

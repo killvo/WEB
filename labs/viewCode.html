@@ -1,0 +1,38 @@
+<style>
+    .content {
+        width: 1200px;
+        text-align: center;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+    .content_view {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .content_html {
+        width: 575px;
+        float: left;
+        margin-left: 0;
+
+    }
+    .content_css {
+        width: 575px;
+        float: left;
+        margin-left: 50px;
+
+    }
+</style>
+<div class="content">
+    <div class="content_view">
+    </div>
+    <div class="content_html">
+    </div>
+    <div class="content_css">
+    </div>
+</div>
+<script>
+    $(".content_view").append("<img class='img_view'>");
+    $(".content_html").append("<img class='img_html'>");
+    $(".content_css").append("<img class='img_css'>");
+</script>

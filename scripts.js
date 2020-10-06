@@ -10,22 +10,80 @@ function show(fileName) {
     });
 }
 
-// Для ЛР №2
-$(document).ready(function() {
-    $(".show_load").append("<img class='img_elem'>");
-})
-
-function openImgByPath(imgPath) {
-    $(".img_elem").attr("src", imgPath);
+function showBig(fileName) {
+    $.get(fileName, function (data) {
+        $(".big_load").html(data);
+    });
 }
 
-$('select2').change(function() {
-    switch ($("#select2 option:selected").getVal()) {
-        case "0":
-            openImgByPath('images/precDiagram.jpg');
-        case "1":
-            openImgByPath('images/precDiagram.jpg');
-        case "2":
-            openImgByPath('images/precDiagram.jpg');
-    }
+// Для ЛР №2
+
+$(document).ready(function() {
+    $(".show_load").append("<style>\n" +
+        "    .content {\n" +
+        "        width: 1200px;\n" +
+        "        text-align: center;\n" +
+        "        margin-top: 50px;\n" +
+        "        margin-left: 50px;\n" +
+        "    }\n" +
+        "    .content_view {\n" +
+        "        width: 100%;\n" +
+        "        text-align: center;\n" +
+        "        margin-bottom: 25px;\n" +
+        "    }\n" +
+        "    .content_html {\n" +
+        "        width: 575px;\n" +
+        "        float: left;\n" +
+        "        margin-left: 0;\n" +
+        "\n" +
+        "    }\n" +
+        "    .content_css {\n" +
+        "        width: 575px;\n" +
+        "        float: left;\n" +
+        "        margin-left: 50px;\n" +
+        "\n" +
+        "    }\n" +
+        "</style>\n" +
+        "<div class=\"content\">\n" +
+        "    <div class=\"content_view\">\n" +
+        "    </div>\n" +
+        "    <div class=\"content_html\">\n" +
+        "    </div>\n" +
+        "    <div class=\"content_css\">\n" +
+        "    </div>\n" +
+        "</div>\n" +
+        "<script>\n" +
+        "    $(\".content_view\").append(\"<img class='img_view'>\");\n" +
+        "    $(\".content_html\").append(\"<img class='img_html'>\");\n" +
+        "    $(\".content_css\").append(\"<img class='img_css'>\");\n" +
+        "</script>")
 })
+
+
+
+function loadView(imgPath) {
+    $(".img_view").attr("src", imgPath);
+}
+function loadHtml(imgPath) {
+    $(".img_html").attr("src", imgPath);
+}
+function loadCss(imgPath) {
+    $(".img_css").attr("src", imgPath);
+}
+function loadViewMain(img_view, img_html, img_css) {
+    $(".big_load").empty();
+    $(".img_view").attr("src", "");
+    $(".img_html").attr("src", "");
+    $(".img_css").attr("src", "");
+    addBorders();
+    loadView(img_view);
+    loadHtml(img_html);
+    loadCss(img_css);
+}
+
+
+function addBorders() {
+    $(".content_view").css("border", "5px solid grey");
+    $(".content_html").css("border", "5px solid grey");
+    $(".content_css").css("border", "5px solid grey");
+}
