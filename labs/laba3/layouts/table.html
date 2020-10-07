@@ -21,7 +21,7 @@
 	</style>
 </head>
 <body>
-	<table border="1" align="center" class="table" cellspacing="0">
+	<table border="1" align="center" class="table" cellspacing="">
 		<tr class="header_top">
 			<td colspan="2" bgcolor="f7a500"></td>
 			<td rowspan="3" bgcolor="f7a500"></td>
@@ -33,14 +33,21 @@
 		</tr>
 		<tr class="header_bottom">
 			<td colspan="3" bgcolor="f7a500"></td>
-			
 		</tr>
 
-		<tr class="middle_row">
-			<td bgcolor="#0f23d9">block1</td>
-			<td>block2</td>
-			<td bgcolor="#0f23d9">block3</td>
+
+		<tr>
+			<td rowspan="3" width="300px" bgcolor="#0f23d9"></td>
+			<td colspan="2" bgcolor="red"></td>
 		</tr>
+		<tr class="middle_row">
+			<td>block2</td>
+			<td rowspan="2" bgcolor="#0f23d9">block3</td>
+		</tr>
+		<tr>
+			<td bgcolor="green"></td>
+		</tr>
+
 		<tr>
 			<td colspan="3" bgcolor="f7a500">block4</td>
 		</tr>
