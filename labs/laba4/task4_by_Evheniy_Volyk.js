@@ -6,8 +6,33 @@ for (var i = 0; i < A.length; i++) {
 	if(A[i] == B[i]){
 		C[i] = 1;
 	}
-	else (A[i] != B[i]) {
+	else {
 		C[i] = 1 / (A[i] - B[i]);
 	}
 }
+alert(C);
 
+var temp = C[0];
+C[0] = C[9];
+C[9] = temp;
+
+
+alert(C);
+
+function bubbleSort(C) {
+	for(var i = C.length -1; i > 0; i--) {
+		var counter = 0;
+		for(var j = 0; j < i; j++) {
+			if(C[j] > C[j+1]) {
+			var tmp = C[j];
+			C[j] = C[j+1];
+			C[j+1] = tmp;
+
+		}
+	}
+	if(counter == 0){
+		break;
+	}	
+		
+	}
+}
