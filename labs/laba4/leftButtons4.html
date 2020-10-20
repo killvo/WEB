@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Кнопки</title>
+    <script src="/scripts.js"></script>
+    <link rel="stylesheet" type="text/css" href="/styles/leftShow_style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<div class="buttons">
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="loadViewMain('labs/laba4/images/postanovka4.jpg')">Постановка задачі ЛР №4</button>
+    <h6 style="margin-top: 15px; margin-bottom: -15px">Способи функціонального застосування JavaScript</h6>
+    <select id="select3" class="browser-default custom-select custom-select-lg mb-3" style="margin-top: 15px;">
+        <option selected="selected"></option>
+        <option value="0">Схема URL</option>
+        <option value="1">Обробник подій</option>
+        <option value="2">Підстановка (entity)</option>
+        <option value="3">Вставка (тег SCRIPT)</option>
+    </select>
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="loadViewMain('', 'labs/laba4/images/task4_chumak_all.jpg'),
+     loadCss('labs/laba4/images/task4_chumak_all.jpg')">Масиви (4 пункт)</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="loadViewMain('', 'labs/laba4/images/task4_chumak_all.jpg'),
+     loadCss('labs/laba4/images/task4_chumak_all.jpg')">Виконання 6 пункту</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="loadViewMain('labs/laba4/images/8_view.jpg',
+    'labs/laba4/images/8_html.jpg', 'labs/laba4/images/8_js.jpg')">Виконання 8 пункту</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="loadViewMain('labs/laba4/images/conclusion.jpg')">Висновки</button>
+</div>
+
+<script>
+    $('#select3').change(function () {
+        $(".big_load").empty();
+        addBorders();
+        let number = $("select#select3 option:checked").val();
+        switch (number) {
+            case "0":
+                loadView('labs/laba4/images/select-0_view.jpg');
+                loadHtml('labs/laba4/images/select-0_html.jpg');
+                break;
+            case "1":
+                loadView('labs/laba4/images/select-1_view.jpg');
+                loadHtml('labs/laba4/images/select-1_html.jpg');
+                break;
+            case "2":
+                loadView('labs/laba4/images/select-3_view.jpg');
+                loadHtml('labs/laba4/images/select-3_html.jpg');
+                break;
+            case "3":
+                loadView('labs/laba4/images/select-3_view.jpg');
+                loadHtml('labs/laba4/images/select-3_html.jpg');
+                break;
+        }
+    })
+</script>
+</body>
+</html>

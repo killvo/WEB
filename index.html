@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <title>Домашня бухгалтерія</title>
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
+<script>
+    $(function () {
+        $("#datepicker_from").datepicker({
+            dateFormat: "dd.mm.yy",
+            changeYear: true,
+            minDate: new Date(2020, 1, 1),
+            maxDate: new Date(2050, 12, 18)
+        })
+        $("#datepicker_to").datepicker({
+            dateFormat: "dd.mm.yy",
+            changeYear: true,
+            minDate: new Date(2020, 1, 1),
+            maxDate: new Date(2050, 12, 18)
+        })
+    })
+</script>
 
 <div class="header">
     <div class="wrapper">
@@ -104,6 +123,16 @@
                             <option value="12">Грудень</option>
                         </select>
                     </div>
+                </div>
+                <!-- за період -->
+                <div class="formText">Певний період</div><br>
+                <div class="form__pair">
+                    <div class="formText">Від</div>
+                    <input type="text" id="datepicker_from">
+                </div>
+                <div class="form__pair">
+                    <div class="formText">До</div>
+                    <input type="text" id="datepicker_to">
                 </div>
                 <div class="form__submit">
                     <input type="submit" value="Показати">

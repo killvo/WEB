@@ -69,13 +69,16 @@ $(document).ready(function() {
 
 
 function loadView(imgPath) {
-    $(".img_view").attr("src", imgPath);
+    document.getElementsByClassName("img_view")[0].setAttribute("src", imgPath);
+    //$(".img_view").attr("src", imgPath);
 }
 function loadHtml(imgPath) {
-    $(".img_html").attr("src", imgPath);
+    document.getElementsByClassName("img_html")[0].setAttribute("src", imgPath);
+    //$(".img_html").attr("src", imgPath);
 }
 function loadCss(imgPath) {
-    $(".img_css").attr("src", imgPath);
+    document.getElementsByClassName("img_css")[0].setAttribute("src", imgPath);
+    //$(".img_css").attr("src", imgPath);
 }
 function loadViewMain(img_view, img_html, img_css) {
     clean();
@@ -91,3 +94,5 @@ function addBorders() {
     $(".content_html").css("border", "5px solid grey");
     $(".content_css").css("border", "5px solid grey");
 }
+
+
