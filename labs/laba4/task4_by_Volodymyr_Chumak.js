@@ -41,7 +41,7 @@ function printSorted(array) {
     console.log("Відсортований масив: " + sortedArr);
 }
 
-function test() {
+function test1() {
     let arr1 = [3, 1, 3, 10, 2, 4, 5, 15, 4];
     let arr2 = [20, 2, 4, 5, 1];
     console.log("Масиви:")

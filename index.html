@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Домашня бухгалтерія</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/index_style.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -10,6 +11,9 @@
 </head>
 <body>
 <script>
+    function getPaymentById(id) {
+        let payment0 = new Payment()
+    }
     $(function () {
         $("#datepicker_from").datepicker({
             dateFormat: "dd.mm.yy",
@@ -23,6 +27,14 @@
             minDate: new Date(2020, 1, 1),
             maxDate: new Date(2050, 12, 18)
         })
+
+        function Payment(id, sum) {
+            this.id = id;
+            this.sum = sum;
+        }
+
+        let payment1 = new Payment(0, 120);
+
     })
 </script>
 
@@ -69,7 +81,7 @@
                 <td width="5"><input type="checkBox">№1</td>
                 <td>категорія1</td>
                 <td>дата1</td>
-                <td>сума1</td>
+                <td></td>
                 <td>коментар1</td>
             </tr>
             <tr>

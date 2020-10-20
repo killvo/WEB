@@ -20,30 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9ba67f-44fa-42a2-88ec-0027d10925bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/labs/laba2/images2/conclusion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba3/images3/conclusion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/conclusion.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/postanovka4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/select-0_html.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/select-0_view.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/select-1_html.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/select-1_view.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/select-3_html.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/select-3_view.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/task4_chumak_all.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/task4_chumak_js.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/task4_chumak_view.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/leftButtons4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/task4_by_Volodymyr_Chumak.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WEB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_html.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba4/images/entity.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba4/images/task4_volyk_all.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/laba2/leftButtons2.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba2/leftButtons2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/laba3/leftButtons3.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba3/leftButtons3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/laba4/leftButtons4.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/leftButtons4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/laba4/task4_by_Evheniy_Volyk.js" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/task4_by_Evheniy_Volyk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/laba4/task4_by_Volodymyr_Chumak.js" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/task4_by_Volodymyr_Chumak.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/labs/laba4/task6_calc.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/task6_calc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +74,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Основи Клієнтської розробки/Лаби/OKR_WEB" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -137,7 +125,7 @@
       <workItem from="1602740367616" duration="167000" />
       <workItem from="1602748228217" duration="6522000" />
       <workItem from="1602763464928" duration="1189000" />
-      <workItem from="1603196375044" duration="4503000" />
+      <workItem from="1603196375044" duration="10057000" />
     </task>
     <servers />
   </component>
@@ -172,10 +160,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="304" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601403470509" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1602740533618">
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1603207426822">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1602740533618" />
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1603207426822" />
     <state x="436" y="263" key="SettingsEditor" timestamp="1602079169805">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
