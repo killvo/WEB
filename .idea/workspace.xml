@@ -20,18 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9ba67f-44fa-42a2-88ec-0027d10925bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_html.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_view.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/entity.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/task4_volyk_all.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_calc_all.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_text_all.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_text_view.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/labs/laba4/leftButtons4.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/leftButtons4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/laba4/task4_by_Evheniy_Volyk.js" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/task4_by_Evheniy_Volyk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/laba4/task4_by_Volodymyr_Chumak.js" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/task4_by_Volodymyr_Chumak.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/laba4/task6_calc.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/task6_calc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +67,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Основи Клієнтської розробки/Лаби/OKR_WEB" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -125,7 +118,11 @@
       <workItem from="1602740367616" duration="167000" />
       <workItem from="1602748228217" duration="6522000" />
       <workItem from="1602763464928" duration="1189000" />
-      <workItem from="1603196375044" duration="10057000" />
+      <workItem from="1603196375044" duration="10109000" />
+      <workItem from="1603265049414" duration="1221000" />
+      <workItem from="1603282952598" duration="23000" />
+      <workItem from="1603389210890" duration="76000" />
+      <workItem from="1603391611951" duration="544000" />
     </task>
     <servers />
   </component>
@@ -160,10 +157,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="304" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601403470509" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1603207426822">
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1603282970228">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1603207426822" />
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1603282970228" />
     <state x="436" y="263" key="SettingsEditor" timestamp="1602079169805">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
