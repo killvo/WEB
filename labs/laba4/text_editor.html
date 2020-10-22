@@ -1,0 +1,66 @@
+<html>
+<head>
+	<style>
+		.editor
+        {
+			border:solid 1px #ccc;
+			padding: 20px;
+			min-height:200px;
+        }
+
+        .sample-toolbar
+        {
+			border:solid 1px #ddd;
+			background:#f4f4f4;
+			padding: 5px;
+			border-radius:3px;
+        }
+
+        .sample-toolbar > span
+        {
+			cursor:pointer;
+		}
+
+        .sample-toolbar > span:hover
+        {
+			text-decoration:underline;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="sample-toolbar">
+		<button><div onclick="format('foreColor', 'red')">Колір</div></button>
+		<button><div onclick="format('bold')">Напівжирність</div></button>
+		<button><div onclick="format('italic')">Курсив</div></button>
+		<button><div onclick="format('insertunorderedlist')">Список</div></button>
+		<button><div onclick="format('underline')">Підкреселння</div></button>
+		<button><div onclick="format('fontSize')">Регістр</div></button>
+		<button><div onclick="setUrl()">Посилання</div></button>
+
+		<span><input id="txtFormatUrl" placeholder="url" class="form-control"></span>
+</div>
+
+<div class="editor" id="sampleeditor">
+	</div>
+
+	<script>
+		window.addEventListener('load', function(){
+			document.getElementById('sampleeditor').setAttribute('contenteditable', 'true');
+			document.getElementById('sampleeditor2').setAttribute('contenteditable', 'true');
+        });
+
+		function format(command, value) {
+			document.execCommand(command, false, value);
+		}
+
+		function setUrl() {
+			var url = document.getElementById('txtFormatUrl').value;
+			var sText = document.getSelection();
+			document.execCommand('insertHTML', false, '<a href="' + url + '" target="_blank">' + sText + '</a>');
+			document.getElementById('txtFormatUrl').value = '';
+		}
+	</script>
+</body>
+</html>
+    
