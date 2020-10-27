@@ -20,13 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9ba67f-44fa-42a2-88ec-0027d10925bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/labs/laba5/laba5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba5/leftButtons5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WEB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/all.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/index_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +124,7 @@
       <workItem from="1603391611951" duration="756000" />
       <workItem from="1603782992245" duration="56000" />
       <workItem from="1603806413423" duration="8015000" />
+      <workItem from="1603820845357" duration="1980000" />
     </task>
     <servers />
   </component>
