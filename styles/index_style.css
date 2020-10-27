@@ -246,4 +246,27 @@ input[type="date"] {
 .footer p {
     color: white;
     margin-top: 50px;
-}
+}#n {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    background:#f1f1f1;
+    margin: 10px;
+    border-radius: 30%;
+    text-align: center;
+
+ }
+ #m {
+     color: #0088CC;
+     font-size: 40px;
+     margin-top: 5px;
+ }
+ a:hover {
+     background: #0088CC;
+     transition: 1s;
+ }
+ a:hover i {
+     color: #f1f1f1;
+     transition: 1s;
+     transform: scale(1.3);
+ }
