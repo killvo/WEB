@@ -10,11 +10,6 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-
-
-    <!-- курс валют-->
-
-
 </head>
 <body>
 <script>
@@ -52,30 +47,7 @@
             </a>
         </div>
         <div class="header-text">Домашня бухгалтерія</div>
-        <!-- clock widget start -->
-        <script type="text/javascript"> var css_file = document.createElement("link");
-        css_file.setAttribute("rel", "stylesheet");
-        css_file.setAttribute("type", "text/css");
-        css_file.setAttribute("href", "//s.bookcdn.com//css/cl/bw-cl-120x45.css");
-        document.getElementsByTagName("head")[0].appendChild(css_file); </script>
-        <div id="tw_6_154961440">
-            <div style="width:130px; height:45px; margin: 0 auto;"><a href="https://hotelmix.com.ua/time/kiev-18881">Київ</a><br/>
-            </div>
-        </div>
-        <script type="text/javascript"> function setWidgetData_154961440(data) {
-            if (typeof (data) != 'undefined' && data.results.length > 0) {
-                for (var i = 0; i < data.results.length; ++i) {
-                    var objMainBlock = '';
-                    var params = data.results[i];
-                    objMainBlock = document.getElementById('tw_' + params.widget_type + '_' + params.widget_id);
-                    if (objMainBlock !== null) objMainBlock.innerHTML = params.html_code;
-                }
-            }
-        }
-        var clock_timer_154961440 = -1; </script>
-        <script type="text/javascript" charset="UTF-8"
-                src="https://widgets.booked.net/time/info?ver=2&domid=966&type=6&id=154961440&scode=124&city_id=18881&wlangid=29&mode=1&details=0&background=ffffff&color=333333&add_background=a0a1a1&add_color=08488d&head_color=333333&border=0&transparent=0"></script>
-        <!-- clock widget end -->
+
         <div class="menu">
             <ul>
                 <li><a href="login.html#auth_paragraph">Login</a></li>
@@ -108,6 +80,8 @@
             </li>
             <li class="ui-state-disabled"><div>Pro-підписка</div></li>
         </ul>
+
+        <!--Інформер курсу валют-->
         <a href="//finance.i.ua/" target="_blank"><img src="//f.i.ua/fp5_b15_c0_l1.png" alt="Курс долара"></a>
         <div id="SinoptikInformer" style="width:180px;" class="SinoptikInformer type4c1">
             <div class="siHeader">
@@ -117,6 +91,7 @@
                     </div>
                 </div>
             </div>
+            <!--Інформер погоди-->
             <div class="siBody">
                 <div class="siTitle"><span id="siHeader"></span></div>
                 <a onmousedown="siClickCount();" href="https://ua.sinoptik.ua/погода-київ" title="Погода у Києві"
@@ -148,7 +123,30 @@
         <script charset="UTF-8"
                 src="//sinoptik.ua/informers_js.php?title=3&amp;wind=1&amp;cities=303010783&amp;lang=ua"></script>
 
-
+        <!-- Інформер годинник -->
+        <script type="text/javascript"> var css_file = document.createElement("link");
+        css_file.setAttribute("rel", "stylesheet");
+        css_file.setAttribute("type", "text/css");
+        css_file.setAttribute("href", "//s.bookcdn.com//css/cl/bw-cl-120x45.css");
+        document.getElementsByTagName("head")[0].appendChild(css_file); </script>
+        <div id="tw_6_154961440">
+            <div style="width:130px; height:45px; margin: 0 auto;"><a href="https://hotelmix.com.ua/time/kiev-18881">Київ</a><br/>
+            </div>
+        </div>
+        <script type="text/javascript"> function setWidgetData_154961440(data) {
+            if (typeof (data) != 'undefined' && data.results.length > 0) {
+                for (var i = 0; i < data.results.length; ++i) {
+                    var objMainBlock = '';
+                    var params = data.results[i];
+                    objMainBlock = document.getElementById('tw_' + params.widget_type + '_' + params.widget_id);
+                    if (objMainBlock !== null) objMainBlock.innerHTML = params.html_code;
+                }
+            }
+        }
+        var clock_timer_154961440 = -1; </script>
+        <script type="text/javascript" charset="UTF-8"
+                src="https://widgets.booked.net/time/info?ver=2&domid=966&type=6&id=154961440&scode=124&city_id=18881&wlangid=29&mode=1&details=0&background=ffffff&color=333333&add_background=a0a1a1&add_color=08488d&head_color=333333&border=0&transparent=0"></script>
+        <!-- clock widget end -->
 
     </div>
 
@@ -346,10 +344,10 @@
         </p>
     </div>
     <div class="container">
-        <a id="n" href="https://www.instagram.com/?hl=ru"><i id="m" class="fa fa-instagram" aria-hidden="true"></i></a>
-        <a id="n" href="https://uk-ua.facebook.com/"><i id="m" class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a id="n" href="https://twitter.com/?lang=ru"><i id="m" class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a id="n" href="https://www.pinterest.com/"><i id="m" class="fa fa-pinterest" aria-hidden="true"></i></a>
+        <a class="n" href="https://www.instagram.com/?hl=ru"><i id="m" class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a class="n" href="https://uk-ua.facebook.com/"><i id="m" class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a class="n" href="https://twitter.com/?lang=ru"><i id="m" class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a class="n" href="https://www.pinterest.com/"><i id="m" class="fa fa-pinterest" aria-hidden="true"></i></a>
     </div>
 </div>
 
