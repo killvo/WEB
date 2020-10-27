@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb9ba67f-44fa-42a2-88ec-0027d10925bb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_calc_all.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_text_all.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/labs/laba4/images/6_text_view.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba5/laba5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/labs/laba5/leftButtons5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/WEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WEB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/labs/laba4/leftButtons4.html" beforeDir="false" afterPath="$PROJECT_DIR$/labs/laba4/leftButtons4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/index_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +37,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -67,24 +69,25 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/labs/laba5" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba5" />
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba4" />
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba3" />
+      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba2\images2" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba3" />
       <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs" />
       <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\images" />
       <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba2" />
       <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba4" />
-      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba3" />
-      <recent name="C:\University\Розроблення веб-застосувань\Лаби\WEB\labs\laba2\images2" />
     </key>
   </component>
   <component name="RunManager">
@@ -122,7 +125,9 @@
       <workItem from="1603265049414" duration="1221000" />
       <workItem from="1603282952598" duration="23000" />
       <workItem from="1603389210890" duration="76000" />
-      <workItem from="1603391611951" duration="544000" />
+      <workItem from="1603391611951" duration="756000" />
+      <workItem from="1603782992245" duration="56000" />
+      <workItem from="1603806413423" duration="8015000" />
     </task>
     <servers />
   </component>
@@ -157,10 +162,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="304" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1601403470509" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1603282970228">
+    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1603783047221">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1603282970228" />
+    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050/-1920.0.1536.834@0.0.1920.1050" timestamp="1603783047221" />
     <state x="436" y="263" key="SettingsEditor" timestamp="1602079169805">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

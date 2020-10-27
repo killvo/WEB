@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery UI</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( "#tabs" ).tabs();
+        } );
+
+        function showBTC() {
+            $.ajax({
+                url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quote%20where%20symbol%20in%20(%22BTCUSD=X%22)&format=json&env=store://datatables.org/alltableswithkeys",
+                dataType: 'jsonp',
+                success: function(json) {
+                    var price = json.query.results.quote.LastTradePriceOnly;
+                    var price = parseFloat(price);
+                    $('.price').html(price + ' $');
+                }
+            });
+        }
+        showBTC();
+
+        setInterval(function() {
+            showBTC();
+        }, 15000); // обновляем каждые 15 секунд
+    </script>
+
+</head>
+<body>
+<style>
+    .btc_container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .price {
+        font-size: 8em;
+        font-weight: 300;
+        color: #fff;
+    }
+</style>
+
+
+<div class="wrapper">
+    <div id="tabs" style="width: 600px; margin: 0 auto;">
+        <ul>
+            <li><a href="#tabs-1">Тема</a></li>
+            <li><a href="#tabs-2">Мета</a></li>
+            <li><a href="#tabs-3">jQuery</a></li>
+        </ul>
+        <div id="tabs-1">
+            <p>ВИКОРИСТАННЯ В СЦЕНАРІЯХ JAVASCRIPT БІБЛІОТЕК КРОС-БРАУЗЕРНИХ ІНТЕРФЕЙСІВ МЕТОДІВ DOM.
+                БІБЛІОТЕКА JQUERY UI. ЗАСОБИ НАЛАГОДЖЕННЯ І ТЕСТУВАННЯ СЦЕНАРІЇВ JAVASCRIPT.
+            </p>
+        </div>
+        <div id="tabs-2">
+            <p>придбати практичні навички роботи jQuery UI, вміти додавати до сайту  динамічні елементи
+                цієї бібіліотеки, плагін галереї UniteGallery, кнопки соціальних мереж, інформери та інше.</p>
+        </div>
+        <div id="tabs-3">
+            <p>jQuery — популярна JavaScript-бібліотека з відкритим сирцевим кодом, якою користується понад 500 тисяч
+                найвідвідуваніших сайтів. jQuery є вільним програмним забезпеченням під ліцензією MIT.</p>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="price"></div>
+    </div>
+</div>
+</body>
+</html>
