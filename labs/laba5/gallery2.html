@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script type='text/javascript' src='unitegallery/dist/js/unitegallery.min.js'></script>
+    <link rel='stylesheet' href='unitegallery/dist/css/unite-gallery.css' type='text/css' />
+    <link rel='stylesheet' href='unitegallery/dist/themes/default/ug-theme-default.css' type='text/css' />
+    <!--Themes-->
+    <script type='text/javascript' src='unitegallery/dist/themes/slider/ug-theme-slider.js'></script>
+</head>
+<body>
+<script >
+    // Фотогалерея
+    jQuery(document).ready(function(){
+        jQuery("#gallery2").unitegallery();
+    });
+</script>
+
+<h1 align="center">Слайдер фотографій</h1>
+<div id="gallery2" style="display:none; margin: 0 auto;">
+    <img alt="Image 1 Title" src="logo1.png"
+         data-image="images/img0.jpg"
+         data-description="Фото 1">
+    <img alt="Image 1 Title" src="logo1.png"
+         data-image="images/img1.jpg"
+         data-description="Фото 2">
+    <img alt="Image 1 Title" src="logo1.png"
+         data-image="images/img2.jpg"
+         data-description="Фото 3">
+    <img alt="Image 1 Title" src="logo1.png"
+         data-image="images/img3.jpg"
+         data-description="Фото 4">
+    <img alt="Image 1 Title" src="logo1.png"
+         data-image="images/img4.jpg"
+         data-description="Фото 5">
+</div>
+</body>
+</html>
