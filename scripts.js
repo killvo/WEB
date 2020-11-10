@@ -82,17 +82,18 @@ function loadCss(imgPath) {
 }
 function loadViewMain(img_view, img_html, img_css) {
     clean();
-    addBorders();
+    //addBorders();
     loadView(img_view);
     loadHtml(img_html);
     loadCss(img_css);
 }
 
 
+/*
 function addBorders() {
     $(".content_view").css("border", "5px solid grey");
     $(".content_html").css("border", "5px solid grey");
     $(".content_css").css("border", "5px solid grey");
 }
-
+*/
 

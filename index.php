@@ -50,7 +50,7 @@
 
         <div class="menu">
             <ul>
-                <li><a href="login.html#auth_paragraph">Login</a></li>
+                <li><a href="login.php#auth_paragraph">Login</a></li>
                 |
                 <li><a href="">Logout</a></li>
             </ul>
@@ -186,12 +186,12 @@
 
     <div class="sort_block">
         <div class="sort_block_form">
-            <form action="" method="post">
+            <form action="" method="get">
                 <div class="formHtext">Переглянути за:</div>
                 <div class="form__pair">
                     <div class="formText">Категорією</div>
                     <div class="form__select">
-                        <select name="">
+                        <select name="showCategory">
                             <option value="select" selected="selected"></option>
                             <option value="cost">Тип:витрати</option>
                             <option value="income">Тип:доходи</option>
@@ -202,7 +202,7 @@
                 <div class="form__pair">
                     <div class="formText">Місяцем</div>
                     <div class="form__select">
-                        <select name="monthShow">
+                        <select name="showMonth">
                             <option value="select" selected="selected"></option>
                             <option value="1">Січень</option>
                             <option value="2">Лютий</option>
@@ -223,17 +223,25 @@
                 <div class="formText">Певний період</div><br>
                 <div class="form__pair">
                     <div class="formText">Від</div>
-                    <input type="text" id="datepicker_from">
+                    <input type="text" id="datepicker_from" name="showFrom">
                 </div>
                 <div class="form__pair">
                     <div class="formText">До</div>
-                    <input type="text" id="datepicker_to">
+                    <input type="text" id="datepicker_to" name="showTo">
                 </div>
                 <div class="form__submit">
                     <input type="submit" value="Показати">
                 </div>
             </form>
         </div>
+
+        <?php
+        if ($_GET != null) {
+            $from = $_GET["showFrom"];
+            $to = $_GET["showTo"];
+            echo 'Показ дати за період з: ', $from, 'по: ', $to;
+        }
+        ?>
 
         <div class="controll__payments">
             <div class="add__payment">
