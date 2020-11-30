@@ -223,11 +223,11 @@
                 <div class="formText">Певний період</div><br>
                 <div class="form__pair">
                     <div class="formText">Від</div>
-                    <input type="text" id="datepicker_from" name="showFrom">
+                    <input type="text" id="datepicker_from" name="showFrom" autocomplete="off">
                 </div>
                 <div class="form__pair">
                     <div class="formText">До</div>
-                    <input type="text" id="datepicker_to" name="showTo">
+                    <input type="text" id="datepicker_to" name="showTo" autocomplete="off">
                 </div>
                 <div class="form__submit">
                     <input type="submit" value="Показати">
