@@ -64,6 +64,7 @@
         <ul id="menu">
             <li class="ui-state-disabled"><div align="center">Меню</div></li>
             <li><div>Інформація</div></li>
+            <li><div><a href="report.html">Звіти</a> </div></li>
             <li><div>Керування категоріями</div></li>
             <li><div>Бюджет</div>
                 <ul>
