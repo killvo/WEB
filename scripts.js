@@ -97,3 +97,37 @@ function addBorders() {
 }
 */
 
+// Зміна мови
+class LangChange {
+    constructor(elem) {
+        elem.onclick = this.handleEvent.bind(this);
+    }
+
+    handleEvent(event) {
+        let action = event.target.dataset.lang;
+        switch (action) {
+            case 'ua':
+                this.setUa();
+                break;
+            case 'ru':
+                this.setRu();
+                break;
+            case 'eng':
+                this.setEng();
+                break
+        }
+    }
+
+    setUa() {
+        document.location.href = "http://web:81/index.php?lang=ua";
+    }
+
+    setRu() {
+        document.location.href = "http://web:81/index.php?lang=ru";
+    }
+
+    setEng() {
+        document.location.href = "http://web:81/index.php?lang=eng";
+    }
+}
+

@@ -1,3 +1,50 @@
+<?php
+header("Content-Type: text/html; charset=UTF-8");
+session_start();
+if ($_GET != null) {
+    $lang = $_GET["lang"];
+    if ($lang != "") {
+        setcookie("lang", $lang, time()+15552000);
+    }
+}
+
+// Підключаємось до сервера
+$connection = @mysqli_connect("web", "root", "root")
+or die("З'єднання з БД не встановлено!");
+// Встановлюємо з'єднання з БД
+mysqli_select_db($connection, "web");
+// Отримаємо з БД перелік категорій користувача та запишемо масив у сесію
+$user_id = $_SESSION["id"];
+
+
+function getCats($connection, $user_id) {
+    $queryGetCats = "SELECT NAME FROM CATS WHERE ID_USER='$user_id'";
+    $resultCats = $connection->query($queryGetCats);
+
+    if ($resultCats->num_rows > 0) {
+        $cats = array();
+        $i = 0;
+        while ($row = $resultCats->fetch_assoc()) {
+            $cats[$i] = $row["NAME"];
+            $i++;
+        }
+        $_SESSION["cats"] = $cats;
+    }
+}
+
+function getCatId($connection, $user_id, $cat_name) {
+    $queryGetID = "SELECT ID FROM CATS WHERE ID_USER='$user_id' AND NAME='$cat_name'";
+    $resultID = $connection->query($queryGetID);
+
+    if ($resultID->num_rows > 0) {
+        $row = $resultID->fetch_assoc();
+        $id = $row["ID"];
+        return $id;
+    }
+}
+
+getCats($connection, $user_id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +57,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="scripts.js"></script>
 </head>
 <body>
 <script>
@@ -48,9 +96,47 @@
         </div>
         <div class="header-text">Домашня бухгалтерія</div>
 
+        <div class="langs">
+            <img src="images/ua.jpg" data-lang="ua">
+            <img src="images/ru.jpg" data-lang="ru">
+            <img src="images/eng.jpg" data-lang="eng">
+        </div>
+        <script>
+            let elem = document.querySelector(".langs");
+            new LangChange(elem);
+        </script>
+        <?php
+        if (isset($_COOKIE["lang"])) {
+            switch ($_COOKIE["lang"]) {
+                case 'ua':
+                    $l = "Українська";
+                    $_COOKIE["l"] = $l;
+                    break;
+                case 'ru':
+                    $l = "Російська";
+                    $_COOKIE["l"] = $l;
+                    break;
+                case 'eng':
+                    $l = "Англійська";
+                    $_COOKIE["l"] = $l;
+                    break;
+            }
+        }
+        ?>
+        <script>
+            // Оновимо сторінку
+            if(document.location.href !== "http://web:81/index.php")
+            {
+                document.location.href = "http://web:81/index.php";
+            }
+
+        </script>
+        <?php
+        echo '<div class="output">Вибрана мова: ', $_COOKIE["l"], '</div>';
+        ?>
         <div class="menu">
             <ul>
-                <li><a href="login.php#auth_paragraph">Login</a></li>
+                <li><a href="login.php">Login</a></li>
                 |
                 <li><a href="">Logout</a></li>
             </ul>
@@ -65,7 +151,7 @@
             <li class="ui-state-disabled"><div align="center">Меню</div></li>
             <li><div>Інформація</div></li>
             <li><div><a href="report.html">Звіти</a> </div></li>
-            <li><div>Керування категоріями</div></li>
+            <li><div><a href="categories.php">Керування категоріями</a></div></li>
             <li><div>Бюджет</div>
                 <ul>
                     <li><div>Сформувати бюджет</div></li>
@@ -185,6 +271,59 @@
         </table>
     </div>
 
+    <?php
+    // Обробник
+    if (isset($_POST["add"])) {
+        addPayment($connection, $user_id);
+    } elseif (isset($_POST["edit"])) {
+        editPayment($connection, $user_id);
+    } elseif (isset($_POST["remove"])) {
+        removePayment($connection, $user_id);
+    }
+
+
+    function addPayment($connection, $user_id) {
+        $select = $_POST["categorySelect"];
+        $date = $_POST["date"];
+        $repeat = $_POST["repeat"];
+        $sum = $_POST["sum"];
+        $comment = $_POST["comment"];
+        // Скрипт на додавання даних у таблицю
+        if ($select != "" & $date != "" & $comment != "" & $sum != "") {
+            $cat_id = (int) getCatId($connection, $user_id, $select);
+            $query = "INSERT INTO OPS (ID_CAT, SUM, OP_DATE, COMMENT)
+                VALUES ('$cat_id', '$sum', '$date', '$comment')";
+            mysqli_query($connection, $query) or die(mysqli_error($connection));
+            getCats($connection, $user_id);
+        }
+    }
+
+    function editPayment($connection, $user_id) {
+        if (isset($_POST)) {
+            $select = $_POST["categorySelect"]; // Ім'я категорії для зміни
+            $type = $_POST["typeChange"]; // cost/income
+            $name = $_POST["nameChange"];
+            if ($select != "" & $type != "" & $name != "") {
+
+                $bType = $type == "cost"?"0":"1"; // 0-cost, 1-income
+                $query = "UPDATE CATS SET NAME='$name', TYPE='$bType' WHERE NAME='$select'";
+                mysqli_query($connection, $query) or die(mysqli_error($connection));
+                getCats($connection, $user_id);
+            }
+        }
+    }
+
+    function removePayment($connection, $user_id) {
+        $select = $_POST["categorySelect"];
+        // Скрипт на додавання даних у таблицю
+        if ($select != "") {
+            $query = "DELETE FROM CATS WHERE NAME='$select'";
+            mysqli_query($connection, $query) or die(mysqli_error($connection));
+            getCats($connection, $user_id);
+        }
+    }
+    ?>
+
     <div class="sort_block">
         <div class="sort_block_form">
             <form action="" method="get">
@@ -243,107 +382,113 @@
             echo 'Показ дати за період з: ', $from, 'по: ', $to;
         }
         ?>
-
-        <div class="controll__payments">
-            <div class="add__payment">
-                <form action="" method="post">
-                    <div class="formHtext">Додати платіж</div>
-                    <div class="formCat__pair">
-                        <div class="formText">Категорія</div>
-                        <div class="form__select">
-                            <select name="categorySelect">
-                                <option value="select" selected="selected"></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Дата</div>
-                        <div class="form__input">
-                            <input type="date" name="date">
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Повторювати</div>
-                        <div class="form__input-checkBox">
-                            <input type="checkBox" class="table__checkBox" name="" value="on">
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Сума</div>
-                        <div class="form__input">
-                            <input type="text" autocomplete="off" name="">
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Коментар</div>
-                        <div class="form__input">
-                            <input type="text" autocomplete="off" name="">
-                        </div>
-                    </div>
-                    <div class="form__submit">
-                        <input type="submit" value="Додати">
-                    </div>
-                </form>
-            </div>
-            <div class="edit__payment">
-                <form action="" method="get" id="editPayments">
-                    <div class="formHtext">Редагувати платіж</div>
-                    <div class="formCat__pair">
-                        <div class="formText">Номер</div>
-                        <div class="form__input">
-                            <input type="text" autocomplete="off" name="">
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Категорія</div>
-                        <div class="form__select">
-                            <select name="categorySelect">
-                                <option value="select" selected="selected"></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Дата</div>
-                        <div class="form__input">
-                            <input type="date" name="date">
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Повторювати</div>
-                        <div class="form__input-checkBox">
-                            <input type="checkBox" class="table__checkBox" name="">
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Сума</div>
-                        <div class="form__input">
-                            <input type="text" autocomplete="off" name="">
-                        </div>
-                    </div>
-                    <div class="formCat__pair">
-                        <div class="formText">Коментар</div>
-                        <div class="form__input">
-                            <input type="text" autocomplete="off" name="">
-                        </div>
-                    </div>
-                    <div class="form__submit">
-                        <input type="submit" value="Змінити">
-                    </div>
-                </form>
-            </div>
-            <div class="delete__payment">
-                <form action="" method="post" id="removePayments">
-                    <div class="formHtext">Видалити платіж</div>
-                    <div class="form__submit_delete">
-                        <input type="submit" value="Видалити">
-                    </div>
-                </form>
-            </div>
-        </div>
-
     </div>
-</div>
 
+    <div class="controll__payments">
+        <div class="add__payment">
+            <form action="" method="post">
+                <div class="formHtext">Додати платіж</div>
+                <div class="formCat__pair">
+                    <div class="formText">Категорія</div>
+                    <div class="form__select">
+                        <select name="categorySelect">
+                            <option value="select" selected="selected"></option>
+                            <?php
+                            $categories = $_SESSION["cats"];
+                            foreach ($categories as $c) {
+                                echo "<option value='$c'>$c</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Дата</div>
+                    <div class="form__input">
+                        <input type="date" name="date">
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Повторювати</div>
+                    <div class="form__input-checkBox">
+                        <input type="checkBox" class="table__checkBox" name="repeat" value="on">
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Сума</div>
+                    <div class="form__input">
+                        <input type="text" autocomplete="off" name="sum">
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Коментар</div>
+                    <div class="form__input">
+                        <input type="text" autocomplete="off" name="comment">
+                    </div>
+                </div>
+                <div class="form__submit">
+                    <input type="submit" value="Додати" name="add">
+                </div>
+            </form>
+        </div>
+        <div class="edit__payment">
+            <form action="" method="get" id="editPayments">
+                <div class="formHtext">Редагувати платіж</div>
+                <div class="formCat__pair">
+                    <div class="formText">Номер</div>
+                    <div class="form__input">
+                        <input type="text" autocomplete="off" name="">
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Категорія</div>
+                    <div class="form__select">
+                        <select name="categorySelect">
+                            <option value="select" selected="selected"></option>
+                        </select>
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Дата</div>
+                    <div class="form__input">
+                        <input type="date" name="date">
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Повторювати</div>
+                    <div class="form__input-checkBox">
+                        <input type="checkBox" class="table__checkBox" name="">
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Сума</div>
+                    <div class="form__input">
+                        <input type="text" autocomplete="off" name="">
+                    </div>
+                </div>
+                <div class="formCat__pair">
+                    <div class="formText">Коментар</div>
+                    <div class="form__input">
+                        <input type="text" autocomplete="off" name="">
+                    </div>
+                </div>
+                <div class="form__submit">
+                    <input type="submit" value="Змінити">
+                </div>
+            </form>
+        </div>
+        <div class="delete__payment">
+            <form action="" method="post" id="removePayments">
+                <div class="formHtext">Видалити платіж</div>
+                <div class="form__submit_delete">
+                    <input type="submit" value="Видалити">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
 
 
 <div class="footer">

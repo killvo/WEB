@@ -164,41 +164,24 @@ input[type="submit"] {
 /* -----------------------------Sorting block End--------------------------- */
 
 
-/* -----------------------------Payments block ----------------------------- */
-.controll__payments {
-    background-color: #fff;
-    width: 430px;
+.controll__category {
+    width: 300px;
     float: left;
-    margin-left: 20px;
+    margin-left: 130px;
     margin-top: 20px;
-    margin-bottom: 80px;
-    /*border: 2px solid gray;*/
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-.add__payment {
-    height: 100%;
-    border-bottom: 2px solid gray;
-    /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
     text-align: center;
+    background-color: #fff;
 }
-.edit__payment {
-    height: 100%;
-    border-bottom: 2px solid gray;
-    /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
-}
-.delete__payment {
-    height: 100%;
-    text-align: center;
-    /*box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);*/
-}
-.form__submit_delete input[type="submit"] {
-    background-color: #e7505a;
-
+input[type="text"] {
+    width: 110px;
+    height: 24px;
+    border-radius: 4px;
 }
 .formCat__pair {
     overflow: hidden;
-    width: 270px;
-    margin: 0 auto 5px;
+    width: 200px;
+    display: inline-block;
 }
 .formCat__pair .formText {
     float: left;
@@ -228,34 +211,17 @@ input[type="date"] {
 .form__input input {
     display: inline-block;
 }
-
-
-.controll__payments h1 {
-    color: #007765;
-    text-align: center;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 64px;
-    line-height: 75px;
+.add__category {
+    height: 155px;
+    border-bottom: 2px solid gray;
 }
-.controll__payments h2 {
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 28px;
-    color: #007765;
-    margin-bottom: -15px;
+.edit__category {
+    height: 190px;
+    border-bottom: 2px solid gray;
 }
-.controll__payments p {
-    font-size: 32px;
-    line-height: 37px;
-    color: #000000;
+.delete__category {
+    height: 100px;
 }
-/* -----------------------------Payments block end-------------------------- */
-
-
-
-
 
 /* --------------------------Footer----------------------------------------- */
 .footer {
@@ -279,18 +245,18 @@ input[type="date"] {
     border-radius: 30%;
     text-align: center;
 
- }
- #m {
-     color: #0088CC;
-     font-size: 40px;
-     margin-top: 5px;
- }
- a:hover {
-     background: #0088CC;
-     transition: 1s;
- }
- a:hover i {
-     color: #f1f1f1;
-     transition: 1s;
-     transform: scale(1.3);
- }
+}
+#m {
+    color: #0088CC;
+    font-size: 40px;
+    margin-top: 5px;
+}
+a:hover {
+    background: #0088CC;
+    transition: 1s;
+}
+a:hover i {
+    color: #f1f1f1;
+    transition: 1s;
+    transform: scale(1.3);
+}
