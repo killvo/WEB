@@ -38,7 +38,6 @@
 <script>
     $('#select1').change(function () {
         $(".big_load").empty();
-        addBorders();
         let number = $("select#select1 option:checked").val();
         switch (number) {
             case "0":
@@ -54,7 +53,6 @@
 
     $('#select2').change(function () {
         $(".big_load").empty();
-        addBorders();
         let number = $("select#select2 option:checked").val();
         switch (number) {
             case "0":

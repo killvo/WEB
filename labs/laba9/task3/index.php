@@ -24,14 +24,12 @@
             <input type="submit" name="submit" value="Зареєструватися">
             <input type="reset" value="Стерти">
         </div>
-        <div class="messages"></div>
+
     </form>
     <p id="result"></p>
     <p id="bg_res"></p>
-    <script>
+    <div class="messages"></div>
 
-
-    </script>
     <script>
         document.forms.loginForm.onsubmit = function (e) {
             e.preventDefault();
@@ -51,6 +49,7 @@
             xhr.send(formData);
         }
     </script>
+
 
 </div>
 
