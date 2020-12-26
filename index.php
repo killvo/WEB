@@ -43,7 +43,23 @@ function getCatId($connection, $user_id, $cat_name) {
     }
 }
 
+function getIDs($connection, $user_id) {
+    $queryGetIDs = "SELECT o.ID FROM OPS o, CATS c WHERE c.ID_USER=$user_id AND o.ID_CAT=c.ID ORDER BY o.ID";
+    $resultIDs = $connection->query($queryGetIDs);
+
+    if ($resultIDs->num_rows > 0) {
+        $ids = array();
+        $i = 0;
+        while ($row = $resultIDs->fetch_assoc()) {
+            $ids[$i] = $row["ID"];
+            $i++;
+        }
+        $_SESSION["ids"] = $ids;
+    }
+}
+
 getCats($connection, $user_id);
+getIDs($connection, $user_id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,26 +79,22 @@ getCats($connection, $user_id);
 <script>
     $(function () {
         $("#datepicker_from").datepicker({
-            dateFormat: "dd.mm.yy",
+            dateFormat: "yy-mm-dd",
             changeYear: true,
             minDate: new Date(2020, 1, 1),
             maxDate: new Date(2050, 12, 18)
         })
         $("#datepicker_to").datepicker({
-            dateFormat: "dd.mm.yy",
+            dateFormat: "yy-mm-dd",
             changeYear: true,
             minDate: new Date(2020, 1, 1),
             maxDate: new Date(2050, 12, 18)
         })
-
-
     })
 
     $( function() {
         $( "#menu" ).menu();
     } );
-
-
 </script>
 
 
@@ -152,6 +164,7 @@ getCats($connection, $user_id);
             <li><div>Інформація</div></li>
             <li><div><a href="report.html">Звіти</a> </div></li>
             <li><div><a href="categories.php">Керування категоріями</a></div></li>
+            <li><div><a href="labs/laba9/task3/index.php">Лаба9 варіант 3</a></div></li>
             <li><div>Бюджет</div>
                 <ul>
                     <li><div>Сформувати бюджет</div></li>
@@ -234,58 +247,52 @@ getCats($connection, $user_id);
         <script type="text/javascript" charset="UTF-8"
                 src="https://widgets.booked.net/time/info?ver=2&domid=966&type=6&id=154961440&scode=124&city_id=18881&wlangid=29&mode=1&details=0&background=ffffff&color=333333&add_background=a0a1a1&add_color=08488d&head_color=333333&border=0&transparent=0"></script>
         <!-- clock widget end -->
-
     </div>
-
-
 
     <div class="table_block">
         <table>
             <tr>
-                <th colspan="2">Категорія</th>
+                <th>ID</th>
+                <th>Категорія</th>
                 <th>Дата</th>
                 <th>Сума</th>
                 <th>Коментар</th>
             </tr>
-            <tr>
-                <td width="5"><input type="checkBox">№1</td>
-                <td>категорія1</td>
-                <td>дата1</td>
-                <td></td>
-                <td>коментар1</td>
-            </tr>
-            <tr>
-                <td width="5"><input type="checkBox">№2</td>
-                <td>категорія2</td>
-                <td>дата2</td>
-                <td>сума2</td>
-                <td>коментар2</td>
-            </tr>
-            <tr>
-                <td width="5"><input type="checkBox">№3</td>
-                <td>категорія3</td>
-                <td>дата3</td>
-                <td>сума3</td>
-                <td>коментар3</td>
-            </tr>
+            <?php
+            $payments = $_SESSION["payments"];
+            $i = 0;
+            foreach ($payments as $key => $value) {
+                echo "<tr>";
+                echo "<td>".$value['id']. "</td>";
+                echo "<td>".$value['category']. "</td>";
+                echo "<td>".$value['date']. "</td>";
+                echo "<td>".$value['sum']. "</td>";
+                echo "<td>".$value['comment']. "</td>";
+                echo "</tr>";
+                $i++;
+            }
+            ?>
         </table>
     </div>
 
+
+
     <?php
     // Обробник
-    if (isset($_POST["add"])) {
+
+    if ($_POST["categorySelectAdd"] != '') {
         addPayment($connection, $user_id);
     } elseif (isset($_POST["edit"])) {
         editPayment($connection, $user_id);
-    } elseif (isset($_POST["remove"])) {
+    } elseif ($_POST["paymentDeleteSelect"] != '') {
         removePayment($connection, $user_id);
     }
 
 
+
     function addPayment($connection, $user_id) {
-        $select = $_POST["categorySelect"];
+        $select = $_POST["categorySelectAdd"];
         $date = $_POST["date"];
-        $repeat = $_POST["repeat"];
         $sum = $_POST["sum"];
         $comment = $_POST["comment"];
         // Скрипт на додавання даних у таблицю
@@ -294,39 +301,43 @@ getCats($connection, $user_id);
             $query = "INSERT INTO OPS (ID_CAT, SUM, OP_DATE, COMMENT)
                 VALUES ('$cat_id', '$sum', '$date', '$comment')";
             mysqli_query($connection, $query) or die(mysqli_error($connection));
+            $_POST["categorySelect"] = "";
             getCats($connection, $user_id);
         }
     }
 
     function editPayment($connection, $user_id) {
-        if (isset($_POST)) {
-            $select = $_POST["categorySelect"]; // Ім'я категорії для зміни
-            $type = $_POST["typeChange"]; // cost/income
-            $name = $_POST["nameChange"];
-            if ($select != "" & $type != "" & $name != "") {
+        $select = $_POST["paymentEditSelect"];
+        $catSelect = $_POST["categorySelect"];
+        $date = $_POST["date"];
+        $sum = $_POST["sum"];
+        $comment = $_POST["comment"];
 
-                $bType = $type == "cost"?"0":"1"; // 0-cost, 1-income
-                $query = "UPDATE CATS SET NAME='$name', TYPE='$bType' WHERE NAME='$select'";
-                mysqli_query($connection, $query) or die(mysqli_error($connection));
-                getCats($connection, $user_id);
-            }
-        }
-    }
-
-    function removePayment($connection, $user_id) {
-        $select = $_POST["categorySelect"];
-        // Скрипт на додавання даних у таблицю
-        if ($select != "") {
-            $query = "DELETE FROM CATS WHERE NAME='$select'";
+        if ($select != "" & $date != "" & $sum != "" & $comment != "") {
+            $pID = (int)$select;
+            $cat_id = (int)getCatId($connection, $user_id, $catSelect);
+            $query = "UPDATE OPS SET ID_CAT='$cat_id', SUM='$sum', OP_DATE='$date', COMMENT='$comment'
+                    WHERE ID='$pID'";
             mysqli_query($connection, $query) or die(mysqli_error($connection));
             getCats($connection, $user_id);
         }
+        getIDs($connection, $user_id);
+    }
+
+    function removePayment($connection, $user_id) {
+        $select = $_POST["paymentDeleteSelect"];
+        if ($select != "") {
+            $query = "DELETE FROM OPS WHERE ID='$select'";
+            mysqli_query($connection, $query) or die(mysqli_error($connection));
+            getCats($connection, $user_id);
+        }
+        getIDs($connection, $user_id);
     }
     ?>
 
     <div class="sort_block">
         <div class="sort_block_form">
-            <form action="" method="get">
+            <form name="showForm">
                 <div class="formHtext">Переглянути за:</div>
                 <div class="form__pair">
                     <div class="formText">Категорією</div>
@@ -336,10 +347,17 @@ getCats($connection, $user_id);
                             <option value="cost">Тип:витрати</option>
                             <option value="income">Тип:доходи</option>
                             <option value="all">Всі категорії</option>
+                            <option value="select" selected="selected"></option>
+                            <?php
+                            $categories = $_SESSION["cats"];
+                            foreach ($categories as $c) {
+                                echo "<option value='$c'>$c</option>";
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>
-                <div class="form__pair">
+                <!--<div class="form__pair">
                     <div class="formText">Місяцем</div>
                     <div class="form__select">
                         <select name="showMonth">
@@ -358,7 +376,7 @@ getCats($connection, $user_id);
                             <option value="12">Грудень</option>
                         </select>
                     </div>
-                </div>
+                </div>-->
                 <!-- за період -->
                 <div class="formText">Певний період</div><br>
                 <div class="form__pair">
@@ -370,28 +388,158 @@ getCats($connection, $user_id);
                     <input type="text" id="datepicker_to" name="showTo" autocomplete="off">
                 </div>
                 <div class="form__submit">
-                    <input type="submit" value="Показати">
+                    <input id="show" type="submit" value="Показати">
                 </div>
             </form>
         </div>
 
+        <script>
+            document.forms.showForm.onsubmit = function (e) {
+                e.preventDefault();
+
+                let xhr = new XMLHttpRequest();
+                xhr.open('POST', 'index.php');
+                let formData = new FormData(document.forms.showForm);
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        document.location.href = "http://web:81/index.php";
+                    }
+                }
+
+                xhr.send(formData);
+            }
+        </script>
+
         <?php
-        if ($_GET != null) {
-            $from = $_GET["showFrom"];
-            $to = $_GET["showTo"];
-            echo 'Показ дати за період з: ', $from, 'по: ', $to;
+
+        $catName = $_POST["showCategory"];
+        if ($catName === 'cost') {
+            getByType($connection, $user_id, '0');
+        } elseif ($catName === 'income') {
+            getByType($connection, $user_id, '1');
+        } elseif ($catName === 'all') {
+            getAll($connection, $user_id);
+        } else {
+            getByName($connection, $user_id, $catName);
+        }
+        if ($_POST["showFrom"] != "") {
+            $from = $_POST["showFrom"];
+            $to = $_POST["showTo"];
+            getByDate($connection, $user_id, $from, $to);
+        }
+        function getCatNameById($connection, $user_id, $id) {
+            $queryGetName = "SELECT NAME FROM CATS WHERE ID_USER='$user_id' AND ID='$id'";
+            $resultName = $connection->query($queryGetName);
+
+            if ($resultName->num_rows > 0) {
+                $row = $resultName->fetch_assoc();
+                return $row["NAME"];
+            }
+        }
+
+        function getByType($connection, $user_id, $type) {
+            $queryGetPayments = "SELECT o.* FROM OPS o, CATS c 
+                WHERE c.ID_USER=$user_id AND o.ID_CAT=c.ID AND c.TYPE='$type' ORDER BY o.ID";
+            $resultPayments = $connection->query($queryGetPayments);
+
+            if ($resultPayments->num_rows > 0) {
+                $payments = array(array());
+                $i = 0;
+                while ($row = $resultPayments->fetch_assoc()) {
+                    $payments[$i]["id"] = $row["ID"];
+                    $catName = getCatNameById($connection, $user_id, $row["ID_CAT"]);
+                    $payments[$i]["category"] = $catName;
+                    $payments[$i]["sum"] = $row["SUM"];
+                    $payments[$i]["date"] = $row["OP_DATE"];
+                    $payments[$i]["comment"] = $row["COMMENT"];
+                    $i++;
+                }
+                $_SESSION["payments"] = $payments;
+            }
+        }
+
+        function getByName($connection, $user_id, $name) {
+            $queryGetPayments = "SELECT o.* FROM OPS o, CATS c 
+                WHERE c.ID_USER=$user_id AND o.ID_CAT=c.ID AND c.NAME='$name' ORDER BY o.ID";
+            $resultPayments = $connection->query($queryGetPayments);
+
+            if ($resultPayments->num_rows > 0) {
+                $payments = array(array());
+                $i = 0;
+                while ($row = $resultPayments->fetch_assoc()) {
+                    $payments[$i]["id"] = $row["ID"];
+                    $payments[$i]["category"] = $name;
+                    $payments[$i]["sum"] = $row["SUM"];
+                    $payments[$i]["date"] = $row["OP_DATE"];
+                    $payments[$i]["comment"] = $row["COMMENT"];
+                    $i++;
+                }
+                $_SESSION["payments"] = $payments;
+            }
+        }
+
+        function getAll($connection, $user_id) {
+            $queryGetPayments = "SELECT o.* FROM OPS o, CATS c 
+                WHERE c.ID_USER=$user_id AND o.ID_CAT=c.ID ORDER BY o.ID";
+            $resultPayments = $connection->query($queryGetPayments);
+
+            if ($resultPayments->num_rows > 0) {
+                $payments = array(array());
+                $i = 0;
+                while ($row = $resultPayments->fetch_assoc()) {
+                    $payments[$i]["id"] = $row["ID"];
+                    $catName = getCatNameById($connection, $user_id, $row["ID_CAT"]);
+                    $payments[$i]["category"] = $catName;
+                    $payments[$i]["sum"] = $row["SUM"];
+                    $payments[$i]["date"] = $row["OP_DATE"];
+                    $payments[$i]["comment"] = $row["COMMENT"];
+                    $text .= "ID: ". $row["ID"] . " CATEGORY: " . $catName ."\n";
+                    $i++;
+                }
+                $_SESSION["payments"] = $payments;
+                //Запишемо у файл
+                $f = fopen("getAll_text.txt", "w");
+                fwrite($f, $text);
+                fclose($f);
+            }
+        }
+
+        function getByDate($connection, $user_id, $from, $to) {
+            $queryGetPayments = "SELECT o.* FROM OPS o, CATS c
+                WHERE c.ID_USER=$user_id AND o.ID_CAT=c.ID AND o.OP_DATE<='$to' AND o.OP_DATE>=$from ORDER BY o.OP_DATE";
+
+            $resultPayments = $connection->query($queryGetPayments);
+
+            if ($resultPayments->num_rows > 0) {
+                $payments = array(array());
+                $i = 0;
+                while ($row = $resultPayments->fetch_assoc()) {
+                    $payments[$i]["id"] = $row["ID"];
+                    $catName = getCatNameById($connection, $user_id, $row["ID_CAT"]);
+                    $payments[$i]["category"] = $catName;
+                    $payments[$i]["sum"] = $row["SUM"];
+                    $payments[$i]["date"] = $row["OP_DATE"];
+                    $payments[$i]["comment"] = $row["COMMENT"];
+                    $i++;
+                }
+                $_SESSION["payments"] = $payments;
+            }
         }
         ?>
     </div>
 
+
+
+
     <div class="controll__payments">
         <div class="add__payment">
-            <form action="" method="post">
+            <form name="addP">
                 <div class="formHtext">Додати платіж</div>
                 <div class="formCat__pair">
                     <div class="formText">Категорія</div>
                     <div class="form__select">
-                        <select name="categorySelect">
+                        <select name="categorySelectAdd">
                             <option value="select" selected="selected"></option>
                             <?php
                             $categories = $_SESSION["cats"];
@@ -430,14 +578,39 @@ getCats($connection, $user_id);
                     <input type="submit" value="Додати" name="add">
                 </div>
             </form>
+            <script>
+                document.forms.addP.onsubmit = function (e) {
+                    e.preventDefault();
+
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'index.php');
+                    let formData = new FormData(document.forms.addP);
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            document.location.href = "http://web:81/index.php";
+                        }
+                    }
+
+                    xhr.send(formData);
+                }
+            </script>
         </div>
         <div class="edit__payment">
-            <form action="" method="get" id="editPayments">
+            <form method="post">
                 <div class="formHtext">Редагувати платіж</div>
                 <div class="formCat__pair">
-                    <div class="formText">Номер</div>
-                    <div class="form__input">
-                        <input type="text" autocomplete="off" name="">
+                    <div class="formText">Номер платежу</div>
+                    <div class="form__select">
+                        <select name="paymentEditSelect">
+                            <option value="select" selected="selected"></option>
+                            <?php
+                            $ids = $_SESSION["ids"];
+                            foreach ($ids as $id) {
+                                echo "<option value='$id'>$id</option>";
+                            }
+                            ?>
+                        </select>
                     </div>
                 </div>
                 <div class="formCat__pair">
@@ -445,6 +618,12 @@ getCats($connection, $user_id);
                     <div class="form__select">
                         <select name="categorySelect">
                             <option value="select" selected="selected"></option>
+                            <?php
+                            $categories = $_SESSION["cats"];
+                            foreach ($categories as $c) {
+                                echo "<option value='$c'>$c</option>";
+                            }
+                            ?>
                         </select>
                     </div>
                 </div>
@@ -454,36 +633,64 @@ getCats($connection, $user_id);
                         <input type="date" name="date">
                     </div>
                 </div>
-                <div class="formCat__pair">
+                <!--<div class="formCat__pair">
                     <div class="formText">Повторювати</div>
                     <div class="form__input-checkBox">
                         <input type="checkBox" class="table__checkBox" name="">
                     </div>
-                </div>
+                </div>-->
                 <div class="formCat__pair">
                     <div class="formText">Сума</div>
                     <div class="form__input">
-                        <input type="text" autocomplete="off" name="">
+                        <input type="text" autocomplete="off" name="sum">
                     </div>
                 </div>
                 <div class="formCat__pair">
                     <div class="formText">Коментар</div>
                     <div class="form__input">
-                        <input type="text" autocomplete="off" name="">
+                        <input type="text" autocomplete="off" name="comment">
                     </div>
                 </div>
                 <div class="form__submit">
-                    <input type="submit" value="Змінити">
+                    <input type="submit" value="Змінити"  name="edit">
                 </div>
             </form>
         </div>
         <div class="delete__payment">
-            <form action="" method="post" id="removePayments">
+            <form name="deleteP">
                 <div class="formHtext">Видалити платіж</div>
+                <div class="form__select">
+                    <select name="paymentDeleteSelect">
+                        <option value="select" selected="selected"></option>
+                        <?php
+                        $ids = $_SESSION["ids"];
+                        foreach ($ids as $id) {
+                            echo "<option value='$id'>$id</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
                 <div class="form__submit_delete">
-                    <input type="submit" value="Видалити">
+                    <input type="submit" value="Видалити" name="remove">
                 </div>
             </form>
+            <script>
+                document.forms.deleteP.onsubmit = function (e) {
+                    e.preventDefault();
+
+                    let xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'index.php');
+                    let formData = new FormData(document.forms.deleteP);
+
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            document.location.href = "http://web:81/index.php";
+                        }
+                    }
+
+                    xhr.send(formData);
+                }
+            </script>
         </div>
     </div>
 

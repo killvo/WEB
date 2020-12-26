@@ -67,7 +67,6 @@ if ($login != "" & $password != "") {
         } else {
             echo "<center>Неправильний пароль!</center>";
         }
-
     } else {
         echo "<center>Користувача з таким логіном не існує!</center>";
     }

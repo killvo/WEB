@@ -1,0 +1,32 @@
+.buttons {
+    margin-top: 10px;
+}
+#result {
+    color:#074776;
+    font-size:18px;
+    font-weight:bold;
+}
+#bg_res {
+    width:200px;
+    height:10px;
+    margin:0px;
+    background-image:url("../image/bg.jpg");
+    background-repeat: no-repeat;
+    background-position:-200px;
+}
+
+.red {
+    background-position:-150px 0px !important;
+}
+
+.yellow {
+    background-position:-100px -10px !important;
+}
+
+.green {
+    background-position:-30px -20px !important;
+}
+
+.green_v {
+    background-position:0px -20px !important;
+}
